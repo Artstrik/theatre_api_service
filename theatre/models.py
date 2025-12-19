@@ -1,11 +1,9 @@
-import os
 import pathlib
 import uuid
 
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.conf import settings
-from django.template.base import kwarg_re
 from django.utils.text import slugify
 
 
