@@ -14,7 +14,7 @@ Django REST project for reservation tickets and manage plays in theatre
 Python3 must be already installed
 Install PostgresSQL and create db
 
-    git clone https://github.com/Artstrik/theatre_api_service
+    git clone https://github.com/Artstrik/theatre_api_service.git
     cd theatre_api_service
     python -m .venv venv
     .venv\Scripts\activate
