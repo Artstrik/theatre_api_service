@@ -43,6 +43,9 @@ from theatre.serializers import (
 class GenreViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
     GenericViewSet,
 ):
     queryset = Genre.objects.all()
@@ -68,6 +71,9 @@ class GenreViewSet(
 class ActorViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
     GenericViewSet,
 ):
     queryset = Actor.objects.all()
@@ -93,6 +99,9 @@ class ActorViewSet(
 class TheatreHallViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
     GenericViewSet,
 ):
     queryset = TheatreHall.objects.all()
