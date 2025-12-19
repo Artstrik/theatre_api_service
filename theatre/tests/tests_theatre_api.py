@@ -10,7 +10,7 @@ from django.urls import reverse
 from rest_framework.test import APIClient
 from rest_framework import status
 
-from theatre.models import Play, Performance, TheatreHall, Genre, Actor, Reservation, Ticket
+from theatre.models import Play, Performance, TheatreHall, Genre, Actor
 from theatre.serializers import PlayDetailSerializer, PlayListSerializer
 
 PLAY_URL = reverse("theatre:play-list")
@@ -424,7 +424,9 @@ class AuthenticatedTheatreApi(TestCase):
         play2.genres.add(genre2)
         play3.genres.add(genre1)
 
-        res = self.client.get(PLAY_URL, {"title": "hamlet", "genres": f"{genre1.id}"})
+        res = self.client.get(PLAY_URL, {
+            "title": "hamlet", "genres": f"{genre1.id}"
+        })
 
         serializer1 = PlayListSerializer(play1)
         serializer2 = PlayListSerializer(play2)
@@ -458,7 +460,11 @@ class AuthenticatedTheatreApi(TestCase):
 
         res = self.client.get(
             PLAY_URL,
-            {"title": "play", "genres": f"{genre1.id}", "actors": f"{actor1.id}"},
+            {
+                "title": "play",
+                "genres": f"{genre1.id}",
+                "actors": f"{actor1.id}"
+            },
         )
 
         serializer1 = PlayListSerializer(play1)

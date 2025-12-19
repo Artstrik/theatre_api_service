@@ -411,7 +411,8 @@ class ReservationViewSet(
         serializer.save(user=self.request.user)
 
     @extend_schema(
-        description="Get list of user's reservations. Authentication required.",
+        description="Get list of user's reservations."
+                    " Authentication required.",
         summary="List user reservations"
     )
     def list(self, request, *args, **kwargs):
